@@ -1,0 +1,11 @@
+* {
+	background-color: rgb(134, 211, 236);
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	text-align: center;
+	font-size: 3 rem;
+	padding: 1rem;
+}
+
+img {
+	height: 21rem;
+}

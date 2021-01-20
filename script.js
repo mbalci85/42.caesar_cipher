@@ -30,3 +30,28 @@ const encrypter = (word, key) => {
 };
 
 console.log(encrypter('Hello World', -5));
+
+const decrypter = (word, key) => {
+	let res = [];
+	let alphabet = 'abcdefghijklmnopqrstuvwxyz';
+
+	for (let i = 0; i < word.length; i++) {
+		if (!alphabet.includes(word[i].toLowerCase())) {
+			res.push(word[i]);
+		}
+		for (let j = 0; j < alphabet.length; j++) {
+			if (word[i].toLowerCase() == alphabet[j]) {
+				if (j - key <= 25 && j - key >= 0) {
+					res.push(alphabet[j - key]);
+				} else if (j - key < 0) {
+					res.push(alphabet[j - key + 26]);
+				} else if (j - key > 25) {
+					res.push(alphabet[j - key - 26]);
+				}
+			}
+		}
+	}
+	return res.join('');
+};
+
+console.log(decrypter('czggj rjmgy', -5));
